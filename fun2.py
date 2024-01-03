@@ -26,10 +26,10 @@ class Ui(QMainWindow):
                 self.ui.plainTextEdit.setPlainText("Done")
             else:
                 num_bytes = int(self.ui.textEdit_2.toPlainText())
-                with open('dump.txt', 'rb') as f:
+                with open('dump.bin', 'rb') as f:
                     data = f.read(num_bytes)
-                data = binascii.hexlify(data).decode('utf-8')  # Convert binary data to a hex string
-                data = ' '.join([data[i:i + 2] for i in range(0, len(data), 2)])  # Insert space every two characters
+                data = binascii.hexlify(data).decode('utf-8') 
+                data = ' '.join([data[i:i + 2] for i in range(0, len(data), 2)]) 
                 self.ui.plainTextEdit.setPlainText(data)
         if self.ui.checkBox.isChecked() and self.ui.comboBox.currentText():
             self.ui.plainTextEdit.setPlainText(
