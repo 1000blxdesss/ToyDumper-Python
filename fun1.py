@@ -6,7 +6,7 @@ def get_pid_by_name(name):
     for proc in psutil.process_iter(attrs=['pid', 'name']):
         if proc.info['name'] == name:
             return proc.info['pid']
-def dump_process_memory(pid, start_address, end_address, filename='dump.txt'):
+def dump_process_memory(pid, start_address, end_address, filename='dump.bin'):
     PROCESS_ALL_ACCESS = (win32con.PROCESS_VM_READ | win32con.PROCESS_QUERY_INFORMATION)
     process_handle = win32api.OpenProcess(PROCESS_ALL_ACCESS, False, pid)
     with open(filename, 'wb') as file:
