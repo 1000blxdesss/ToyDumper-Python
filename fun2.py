@@ -18,19 +18,18 @@ class Ui(QMainWindow):
         self.ui.comboBox.showPopup()
 
     def button_pressed(self):
-        if self.ui.pushButton.pressed and self.ui.comboBox.currentText() is not None:
-            if self.ui.textEdit.toPlainText() == '0':
-                dump_process_memory((get_pid_by_name(self.ui.comboBox.currentText())),
+        if self.ui.pushButton.pressed and self.ui.comboBox.currentText():
+            dump_process_memory((get_pid_by_name(self.ui.comboBox.currentText())),
                                     (int(self.ui.textEdit.toPlainText(), 16)),
                                     (int(self.ui.textEdit_3.toPlainText(), 16)))
-                self.ui.plainTextEdit.setPlainText("Done")
-            else:
-                num_bytes = int(self.ui.textEdit_2.toPlainText())
-                with open('dump.bin', 'rb') as f:
-                    data = f.read(num_bytes)
-                data = binascii.hexlify(data).decode('utf-8') 
-                data = ' '.join([data[i:i + 2] for i in range(0, len(data), 2)]) 
-                self.ui.plainTextEdit.setPlainText(data)
+            self.ui.plainTextEdit.setPlainText("Done")
+        if self.ui.pushButton.pressed and self.ui.comboBox.currentIndex()==1:
+            num_bytes = int(self.ui.textEdit_2.toPlainText())
+            with open('dump.bin', 'rb') as f:
+                data = f.read(num_bytes)
+            data = binascii.hexlify(data).decode('utf-8')
+            data = ' '.join([data[i:i + 2] for i in range(0, len(data), 2)])
+            self.ui.plainTextEdit.setPlainText(data)
         if self.ui.checkBox.isChecked() and self.ui.comboBox.currentText():
             self.ui.plainTextEdit.setPlainText(
                 f"{self.ui.comboBox.currentText()}-{get_pid_by_name(self.ui.comboBox.currentText())} was killed")
