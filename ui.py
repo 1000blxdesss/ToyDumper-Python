@@ -72,13 +72,6 @@ class Ui_MainWindow(object):
         self.comboBox = QComboBox(self.centralwidget)
         self.comboBox.addItem("")
         self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setGeometry(QRect(14, 70, 771, 28))
         self.comboBox.setStyleSheet(u"QComboBox {\n"
@@ -258,15 +251,7 @@ class Ui_MainWindow(object):
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Outputs:</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Select process:</span></p></body></html>", None))
         self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"System", None))
-        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"fsdf", None))
-        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"fsdf", None))
-        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"fsdf", None))
-        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"fsdf", None))
-        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"sd", None))
-        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"fsd", None))
-        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"f", None))
-        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"sdf", None))
-
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" color:#ffffff;\">Input memory dump region:</span></p></body></html>", None))
         self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
